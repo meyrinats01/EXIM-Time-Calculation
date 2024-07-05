@@ -16,6 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.Odbc" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="eximtimecalculation.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>eximtimecalculation.xsd</DependentUpon>
+    </Compile>
     <Compile Update="My Project\Application.Designer.vb">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -37,6 +46,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="eximtimecalculation.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eximtimecalculation.Designer.vb</LastGenOutput>
+    </None>
     <None Update="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -1,0 +1,9 @@
+[ODBC]
+DRIVER=MySQL ODBC 8.4 ANSI Driver
+UID=ariebrainware
+USER=ariebrainware
+SERVER=ritalinserver.ddns.net
+PORT=13306
+PASSWORD={huvtex-diqjuK-2bakmi}
+NO_SCHEMA=1
+DB=pinguinferryjasa

@@ -47,7 +47,7 @@ Partial Class menu
         ' MenuStrip2
         ' 
         MenuStrip2.Enabled = False
-        MenuStrip2.Font = New Font("Segoe UI", 19.0F)
+        MenuStrip2.Font = New Font("Segoe UI", 19F)
         MenuStrip2.Items.AddRange(New ToolStripItem() {SailingToolStripMenuItem, ImportToolStripMenuItem, ExportToolStripMenuItem, CalculationToolStripMenuItem, LogOutToolStripMenuItem})
         MenuStrip2.Location = New Point(0, 0)
         MenuStrip2.Name = "MenuStrip2"
@@ -57,35 +57,35 @@ Partial Class menu
         ' 
         ' SailingToolStripMenuItem
         ' 
-        SailingToolStripMenuItem.Font = New Font("Segoe UI", 17.0F)
+        SailingToolStripMenuItem.Font = New Font("Segoe UI", 17F)
         SailingToolStripMenuItem.Name = "SailingToolStripMenuItem"
         SailingToolStripMenuItem.Size = New Size(95, 35)
         SailingToolStripMenuItem.Text = "Sailing"
         ' 
         ' ImportToolStripMenuItem
         ' 
-        ImportToolStripMenuItem.Font = New Font("Segoe UI", 17.0F)
+        ImportToolStripMenuItem.Font = New Font("Segoe UI", 17F)
         ImportToolStripMenuItem.Name = "ImportToolStripMenuItem"
         ImportToolStripMenuItem.Size = New Size(95, 35)
         ImportToolStripMenuItem.Text = "Import"
         ' 
         ' ExportToolStripMenuItem
         ' 
-        ExportToolStripMenuItem.Font = New Font("Segoe UI", 17.0F)
+        ExportToolStripMenuItem.Font = New Font("Segoe UI", 17F)
         ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
         ExportToolStripMenuItem.Size = New Size(92, 35)
         ExportToolStripMenuItem.Text = "Export"
         ' 
         ' CalculationToolStripMenuItem
         ' 
-        CalculationToolStripMenuItem.Font = New Font("Segoe UI", 17.0F)
+        CalculationToolStripMenuItem.Font = New Font("Segoe UI", 17F)
         CalculationToolStripMenuItem.Name = "CalculationToolStripMenuItem"
         CalculationToolStripMenuItem.Size = New Size(140, 35)
         CalculationToolStripMenuItem.Text = "Calculation"
         ' 
         ' LogOutToolStripMenuItem
         ' 
-        LogOutToolStripMenuItem.Font = New Font("Segoe UI", 17.0F)
+        LogOutToolStripMenuItem.Font = New Font("Segoe UI", 17F)
         LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
         LogOutToolStripMenuItem.Size = New Size(108, 35)
         LogOutToolStripMenuItem.Text = "Log Out"
@@ -102,7 +102,7 @@ Partial Class menu
         ' lbl_welcome
         ' 
         lbl_welcome.AutoSize = True
-        lbl_welcome.Font = New Font("Segoe UI", 40.0F)
+        lbl_welcome.Font = New Font("Segoe UI", 40F)
         lbl_welcome.Location = New Point(804, 92)
         lbl_welcome.Name = "lbl_welcome"
         lbl_welcome.Size = New Size(359, 72)
@@ -112,7 +112,7 @@ Partial Class menu
         ' lbl_loading
         ' 
         lbl_loading.AutoSize = True
-        lbl_loading.Font = New Font("Segoe UI", 38.0F)
+        lbl_loading.Font = New Font("Segoe UI", 38F)
         lbl_loading.Location = New Point(804, 178)
         lbl_loading.Name = "lbl_loading"
         lbl_loading.Size = New Size(750, 136)
@@ -144,7 +144,7 @@ Partial Class menu
         ' 
         ' btn_login
         ' 
-        btn_login.Font = New Font("Segoe UI", 30.0F)
+        btn_login.Font = New Font("Segoe UI", 30F)
         btn_login.Location = New Point(336, 361)
         btn_login.Name = "btn_login"
         btn_login.Size = New Size(178, 64)
@@ -155,7 +155,7 @@ Partial Class menu
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 30.0F)
+        Label2.Font = New Font("Segoe UI", 30F)
         Label2.Location = New Point(6, 182)
         Label2.Name = "Label2"
         Label2.Size = New Size(188, 54)
@@ -165,7 +165,7 @@ Partial Class menu
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 30.0F)
+        Label1.Font = New Font("Segoe UI", 30F)
         Label1.Location = New Point(6, 55)
         Label1.Name = "Label1"
         Label1.Size = New Size(200, 54)
@@ -174,7 +174,7 @@ Partial Class menu
         ' 
         ' txtbox_password
         ' 
-        txtbox_password.Font = New Font("Segoe UI", 30.0F)
+        txtbox_password.Font = New Font("Segoe UI", 30F)
         txtbox_password.Location = New Point(286, 179)
         txtbox_password.Name = "txtbox_password"
         txtbox_password.PasswordChar = "*"c
@@ -183,7 +183,7 @@ Partial Class menu
         ' 
         ' txtbox_username
         ' 
-        txtbox_username.Font = New Font("Segoe UI", 30.0F)
+        txtbox_username.Font = New Font("Segoe UI", 30F)
         txtbox_username.Location = New Point(286, 48)
         txtbox_username.Name = "txtbox_username"
         txtbox_username.Size = New Size(438, 61)
@@ -191,7 +191,7 @@ Partial Class menu
         ' 
         ' menu
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1556, 800)
         Controls.Add(GroupBox1)

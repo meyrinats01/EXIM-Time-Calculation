@@ -10,12 +10,13 @@ Public Class menu
     End Sub
 
     Private Sub SailingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SailingToolStripMenuItem.Click
-
+        Me.Hide()
+        SailingForm.Show()
     End Sub
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         dbconnection()
-        check = "SELECT * FROM users WHERE username='" & txtbox_username.Text & "' AND password=SHA2('" & txtbox_password.Text & "',512) AND is_active='true' AND role='admin';"
+        check = "SELECT * FROM users WHERE username='" & txtbox_username.Text & "' AND password=SHA2('" & txtbox_password.Text & "',512) AND is_active=true AND role='admin';"
         query = New OdbcCommand(check, conn)
         reader = query.ExecuteReader()
         While reader.Read()
@@ -24,6 +25,7 @@ Public Class menu
                 ' MenuStrip2.Enabled = True
                 ' GroupBox1.Visible = False
                 MsgBox("Welcome, " & reader("full_name"))
+                MenuStrip2.Enabled = True
             Else
                 MsgBox("Username or password is incorrect")
             End If

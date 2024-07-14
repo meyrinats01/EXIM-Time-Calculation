@@ -51,7 +51,7 @@ Partial Class SailingForm
         ' 
         dgv_sailingform.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgv_sailingform.Location = New Point(15, 487)
-        dgv_sailingform.Margin = New Padding(4, 4, 4, 4)
+        dgv_sailingform.Margin = New Padding(4)
         dgv_sailingform.Name = "dgv_sailingform"
         dgv_sailingform.Size = New Size(998, 441)
         dgv_sailingform.TabIndex = 0
@@ -60,7 +60,7 @@ Partial Class SailingForm
         ' 
         txtbox_vesselname.Font = New Font("Segoe UI", 12F)
         txtbox_vesselname.Location = New Point(404, 106)
-        txtbox_vesselname.Margin = New Padding(4, 4, 4, 4)
+        txtbox_vesselname.Margin = New Padding(4)
         txtbox_vesselname.Name = "txtbox_vesselname"
         txtbox_vesselname.Size = New Size(345, 29)
         txtbox_vesselname.TabIndex = 2
@@ -69,7 +69,7 @@ Partial Class SailingForm
         ' 
         txtbox_captain.Font = New Font("Segoe UI", 12F)
         txtbox_captain.Location = New Point(404, 162)
-        txtbox_captain.Margin = New Padding(4, 4, 4, 4)
+        txtbox_captain.Margin = New Padding(4)
         txtbox_captain.Name = "txtbox_captain"
         txtbox_captain.Size = New Size(345, 29)
         txtbox_captain.TabIndex = 7
@@ -155,7 +155,7 @@ Partial Class SailingForm
         ' 
         btn_save.Font = New Font("Segoe UI", 12F)
         btn_save.Location = New Point(846, 136)
-        btn_save.Margin = New Padding(4, 4, 4, 4)
+        btn_save.Margin = New Padding(4)
         btn_save.Name = "btn_save"
         btn_save.Size = New Size(129, 67)
         btn_save.TabIndex = 15
@@ -166,7 +166,7 @@ Partial Class SailingForm
         ' 
         btn_edit.Font = New Font("Segoe UI", 12F)
         btn_edit.Location = New Point(846, 258)
-        btn_edit.Margin = New Padding(4, 4, 4, 4)
+        btn_edit.Margin = New Padding(4)
         btn_edit.Name = "btn_edit"
         btn_edit.Size = New Size(129, 67)
         btn_edit.TabIndex = 16
@@ -177,7 +177,7 @@ Partial Class SailingForm
         ' 
         btn_delete.Font = New Font("Segoe UI", 12F)
         btn_delete.Location = New Point(846, 372)
-        btn_delete.Margin = New Padding(4, 4, 4, 4)
+        btn_delete.Margin = New Padding(4)
         btn_delete.Name = "btn_delete"
         btn_delete.Size = New Size(129, 67)
         btn_delete.TabIndex = 17
@@ -188,7 +188,7 @@ Partial Class SailingForm
         ' 
         DateTimePicker1.Font = New Font("Segoe UI", 12F)
         DateTimePicker1.Location = New Point(411, -41)
-        DateTimePicker1.Margin = New Padding(4, 4, 4, 4)
+        DateTimePicker1.Margin = New Padding(4)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(345, 29)
         DateTimePicker1.TabIndex = 19
@@ -198,7 +198,7 @@ Partial Class SailingForm
         dtp_etd.Font = New Font("Segoe UI", 12F)
         dtp_etd.Format = DateTimePickerFormat.Time
         dtp_etd.Location = New Point(404, 343)
-        dtp_etd.Margin = New Padding(4, 4, 4, 4)
+        dtp_etd.Margin = New Padding(4)
         dtp_etd.Name = "dtp_etd"
         dtp_etd.Size = New Size(345, 29)
         dtp_etd.TabIndex = 26
@@ -208,7 +208,7 @@ Partial Class SailingForm
         dtp_eta.Font = New Font("Segoe UI", 12F)
         dtp_eta.Format = DateTimePickerFormat.Time
         dtp_eta.Location = New Point(404, 223)
-        dtp_eta.Margin = New Padding(4, 4, 4, 4)
+        dtp_eta.Margin = New Padding(4)
         dtp_eta.Name = "dtp_eta"
         dtp_eta.Size = New Size(345, 29)
         dtp_eta.TabIndex = 27
@@ -218,7 +218,7 @@ Partial Class SailingForm
         dtp_ata.Font = New Font("Segoe UI", 12F)
         dtp_ata.Format = DateTimePickerFormat.Time
         dtp_ata.Location = New Point(404, 287)
-        dtp_ata.Margin = New Padding(4, 4, 4, 4)
+        dtp_ata.Margin = New Padding(4)
         dtp_ata.Name = "dtp_ata"
         dtp_ata.Size = New Size(345, 29)
         dtp_ata.TabIndex = 28
@@ -228,7 +228,7 @@ Partial Class SailingForm
         dtp_atd.Font = New Font("Segoe UI", 12F)
         dtp_atd.Format = DateTimePickerFormat.Time
         dtp_atd.Location = New Point(404, 399)
-        dtp_atd.Margin = New Padding(4, 4, 4, 4)
+        dtp_atd.Margin = New Padding(4)
         dtp_atd.Name = "dtp_atd"
         dtp_atd.Size = New Size(345, 29)
         dtp_atd.TabIndex = 29
@@ -256,9 +256,9 @@ Partial Class SailingForm
         gbox_sailingform.Controls.Add(Label6)
         gbox_sailingform.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         gbox_sailingform.Location = New Point(15, 17)
-        gbox_sailingform.Margin = New Padding(4, 4, 4, 4)
+        gbox_sailingform.Margin = New Padding(4)
         gbox_sailingform.Name = "gbox_sailingform"
-        gbox_sailingform.Padding = New Padding(4, 4, 4, 4)
+        gbox_sailingform.Padding = New Padding(4)
         gbox_sailingform.Size = New Size(998, 462)
         gbox_sailingform.TabIndex = 30
         gbox_sailingform.TabStop = False
@@ -268,7 +268,7 @@ Partial Class SailingForm
         ' 
         dtp_daydate.Font = New Font("Segoe UI", 12F)
         dtp_daydate.Location = New Point(404, 53)
-        dtp_daydate.Margin = New Padding(4, 4, 4, 4)
+        dtp_daydate.Margin = New Padding(4)
         dtp_daydate.Name = "dtp_daydate"
         dtp_daydate.Size = New Size(345, 29)
         dtp_daydate.TabIndex = 31
@@ -292,7 +292,7 @@ Partial Class SailingForm
         Controls.Add(gbox_sailingform)
         Controls.Add(dgv_sailingform)
         Font = New Font("Segoe UI", 12F)
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "SailingForm"
         Text = "SailingForm"
         CType(dgv_sailingform, ComponentModel.ISupportInitialize).EndInit()

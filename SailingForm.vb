@@ -1,5 +1,6 @@
 ﻿Public Class SailingForm
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
 
+    Private Sub SailingForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Menu.Show()
     End Sub
 End Class

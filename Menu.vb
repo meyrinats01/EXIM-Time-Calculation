@@ -1,5 +1,5 @@
 ﻿Imports System.Data.Odbc
-Public Class menu
+Public Class Menu
     Dim check As String
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lbl_welcome.Click
 
@@ -26,9 +26,27 @@ Public Class menu
                 ' GroupBox1.Visible = False
                 MsgBox("Welcome, " & reader("full_name"))
                 MenuStrip2.Enabled = True
+                gbox_login.Visible = False
             Else
-                MsgBox("Username or password is incorrect")
+                Dim msgBoxResult = MsgBox("Username or password is incorrect")
             End If
         End While
+    End Sub
+
+    Private Sub ImportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportToolStripMenuItem.Click
+        Me.Hide()
+        ImportForm.Show()
+    End Sub
+
+    Private Sub ExportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportToolStripMenuItem.Click
+        Me.Hide()
+        ImportForm.Show()
+    End Sub
+
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
+        gbox_login.Show()
+        txtbox_username.Text = ""
+        txtbox_password.Text = ""
+        MenuStrip2.Enabled = False
     End Sub
 End Class

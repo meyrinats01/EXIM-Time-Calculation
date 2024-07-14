@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class menu
+Partial Class Menu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class menu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(menu))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Menu))
         MenuStrip2 = New MenuStrip()
         SailingToolStripMenuItem = New ToolStripMenuItem()
         ImportToolStripMenuItem = New ToolStripMenuItem()
@@ -33,7 +33,7 @@ Partial Class menu
         lbl_welcome = New Label()
         lbl_loading = New Label()
         lbl_copyright = New Label()
-        GroupBox1 = New GroupBox()
+        gbox_login = New GroupBox()
         btn_login = New Button()
         Label2 = New Label()
         Label1 = New Label()
@@ -41,7 +41,7 @@ Partial Class menu
         txtbox_username = New TextBox()
         MenuStrip2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        GroupBox1.SuspendLayout()
+        gbox_login.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip2
@@ -128,19 +128,19 @@ Partial Class menu
         lbl_copyright.TabIndex = 5
         lbl_copyright.Text = "PT Penguin Ferry Jasa 2024"
         ' 
-        ' GroupBox1
+        ' gbox_login
         ' 
-        GroupBox1.Controls.Add(btn_login)
-        GroupBox1.Controls.Add(Label2)
-        GroupBox1.Controls.Add(Label1)
-        GroupBox1.Controls.Add(txtbox_password)
-        GroupBox1.Controls.Add(txtbox_username)
-        GroupBox1.Location = New Point(804, 345)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(740, 443)
-        GroupBox1.TabIndex = 10
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "Login"
+        gbox_login.Controls.Add(btn_login)
+        gbox_login.Controls.Add(Label2)
+        gbox_login.Controls.Add(Label1)
+        gbox_login.Controls.Add(txtbox_password)
+        gbox_login.Controls.Add(txtbox_username)
+        gbox_login.Location = New Point(804, 345)
+        gbox_login.Name = "gbox_login"
+        gbox_login.Size = New Size(740, 443)
+        gbox_login.TabIndex = 10
+        gbox_login.TabStop = False
+        gbox_login.Text = "Login"
         ' 
         ' btn_login
         ' 
@@ -189,12 +189,12 @@ Partial Class menu
         txtbox_username.Size = New Size(438, 61)
         txtbox_username.TabIndex = 10
         ' 
-        ' menu
+        ' Menu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1556, 800)
-        Controls.Add(GroupBox1)
+        Controls.Add(gbox_login)
         Controls.Add(lbl_copyright)
         Controls.Add(lbl_loading)
         Controls.Add(lbl_welcome)
@@ -202,13 +202,13 @@ Partial Class menu
         Controls.Add(MenuStrip2)
         FormBorderStyle = FormBorderStyle.FixedDialog
         MaximizeBox = False
-        Name = "menu"
+        Name = "Menu"
         Text = "MENU"
         MenuStrip2.ResumeLayout(False)
         MenuStrip2.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
+        gbox_login.ResumeLayout(False)
+        gbox_login.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -223,7 +223,7 @@ Partial Class menu
     Friend WithEvents lbl_welcome As Label
     Friend WithEvents lbl_loading As Label
     Friend WithEvents lbl_copyright As Label
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents gbox_login As GroupBox
     Friend WithEvents btn_login As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label

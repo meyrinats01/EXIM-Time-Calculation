@@ -1,13 +1,6 @@
 ﻿Imports System.Data.Odbc
 Public Class Menu
     Dim check As String
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lbl_welcome.Click
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lbl_loading.Click
-
-    End Sub
 
     Private Sub SailingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SailingToolStripMenuItem.Click
         Me.Hide()
@@ -40,7 +33,7 @@ Public Class Menu
 
     Private Sub ExportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportToolStripMenuItem.Click
         Me.Hide()
-        ImportForm.Show()
+        ExportForm.Show()
     End Sub
 
     Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click

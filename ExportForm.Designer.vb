@@ -267,7 +267,7 @@ Partial Class ExportForm
         Controls.Add(gbox_exportform)
         Controls.Add(dgv_exportform)
         Font = New Font("Segoe UI", 12F)
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "ExportForm"
         Text = "ExportForm"
         gbox_exportform.ResumeLayout(False)

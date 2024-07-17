@@ -73,7 +73,7 @@ Partial Class ImportForm
         gbox_importform.Controls.Add(Label5)
         gbox_importform.Controls.Add(btn_save)
         gbox_importform.Controls.Add(Label6)
-        gbox_importform.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
+        gbox_importform.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         gbox_importform.Location = New Point(13, 21)
         gbox_importform.Margin = New Padding(4)
         gbox_importform.Name = "gbox_importform"
@@ -85,7 +85,7 @@ Partial Class ImportForm
         ' 
         ' txtbox_spvteam
         ' 
-        txtbox_spvteam.Font = New Font("Segoe UI", 12.0F)
+        txtbox_spvteam.Font = New Font("Segoe UI", 12F)
         txtbox_spvteam.Location = New Point(404, 344)
         txtbox_spvteam.Margin = New Padding(4)
         txtbox_spvteam.Name = "txtbox_spvteam"
@@ -94,7 +94,7 @@ Partial Class ImportForm
         ' 
         ' dtp_daydate
         ' 
-        dtp_daydate.Font = New Font("Segoe UI", 12.0F)
+        dtp_daydate.Font = New Font("Segoe UI", 12F)
         dtp_daydate.Location = New Point(404, 53)
         dtp_daydate.Margin = New Padding(4)
         dtp_daydate.Name = "dtp_daydate"
@@ -104,7 +104,7 @@ Partial Class ImportForm
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI", 12.0F)
+        Label8.Font = New Font("Segoe UI", 12F)
         Label8.Location = New Point(24, 65)
         Label8.Margin = New Padding(4, 0, 4, 0)
         Label8.Name = "Label8"
@@ -114,7 +114,7 @@ Partial Class ImportForm
         ' 
         ' txtbox_voyagenumber
         ' 
-        txtbox_voyagenumber.Font = New Font("Segoe UI", 12.0F)
+        txtbox_voyagenumber.Font = New Font("Segoe UI", 12F)
         txtbox_voyagenumber.Location = New Point(404, 106)
         txtbox_voyagenumber.Margin = New Padding(4)
         txtbox_voyagenumber.Name = "txtbox_voyagenumber"
@@ -123,7 +123,7 @@ Partial Class ImportForm
         ' 
         ' dtp_finishunload
         ' 
-        dtp_finishunload.Font = New Font("Segoe UI", 12.0F)
+        dtp_finishunload.Font = New Font("Segoe UI", 12F)
         dtp_finishunload.Format = DateTimePickerFormat.Time
         dtp_finishunload.Location = New Point(404, 231)
         dtp_finishunload.Margin = New Padding(4)
@@ -133,7 +133,7 @@ Partial Class ImportForm
         ' 
         ' dtp_startunload
         ' 
-        dtp_startunload.Font = New Font("Segoe UI", 12.0F)
+        dtp_startunload.Font = New Font("Segoe UI", 12F)
         dtp_startunload.Format = DateTimePickerFormat.Time
         dtp_startunload.Location = New Point(404, 167)
         dtp_startunload.Margin = New Padding(4)
@@ -144,7 +144,7 @@ Partial Class ImportForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 12.0F)
+        Label1.Font = New Font("Segoe UI", 12F)
         Label1.Location = New Point(32, -28)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
@@ -154,7 +154,7 @@ Partial Class ImportForm
         ' 
         ' dtp_packageimport
         ' 
-        dtp_packageimport.Font = New Font("Segoe UI", 12.0F)
+        dtp_packageimport.Font = New Font("Segoe UI", 12F)
         dtp_packageimport.Format = DateTimePickerFormat.Time
         dtp_packageimport.Location = New Point(404, 287)
         dtp_packageimport.Margin = New Padding(4)
@@ -165,7 +165,7 @@ Partial Class ImportForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 12.0F)
+        Label2.Font = New Font("Segoe UI", 12F)
         Label2.Location = New Point(24, 119)
         Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
@@ -175,7 +175,7 @@ Partial Class ImportForm
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.Font = New Font("Segoe UI", 12.0F)
+        DateTimePicker1.Font = New Font("Segoe UI", 12F)
         DateTimePicker1.Location = New Point(411, -41)
         DateTimePicker1.Margin = New Padding(4)
         DateTimePicker1.Name = "DateTimePicker1"
@@ -185,7 +185,7 @@ Partial Class ImportForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 12.0F)
+        Label3.Font = New Font("Segoe UI", 12F)
         Label3.Location = New Point(24, 175)
         Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
@@ -195,7 +195,7 @@ Partial Class ImportForm
         ' 
         ' btn_delete
         ' 
-        btn_delete.Font = New Font("Segoe UI", 12.0F)
+        btn_delete.Font = New Font("Segoe UI", 12F)
         btn_delete.Location = New Point(839, 304)
         btn_delete.Margin = New Padding(4)
         btn_delete.Name = "btn_delete"
@@ -207,7 +207,7 @@ Partial Class ImportForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 12.0F)
+        Label4.Font = New Font("Segoe UI", 12F)
         Label4.Location = New Point(24, 232)
         Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
@@ -217,7 +217,7 @@ Partial Class ImportForm
         ' 
         ' btn_edit
         ' 
-        btn_edit.Font = New Font("Segoe UI", 12.0F)
+        btn_edit.Font = New Font("Segoe UI", 12F)
         btn_edit.Location = New Point(839, 190)
         btn_edit.Margin = New Padding(4)
         btn_edit.Name = "btn_edit"
@@ -229,7 +229,7 @@ Partial Class ImportForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 12.0F)
+        Label5.Font = New Font("Segoe UI", 12F)
         Label5.Location = New Point(24, 296)
         Label5.Margin = New Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
@@ -239,7 +239,7 @@ Partial Class ImportForm
         ' 
         ' btn_save
         ' 
-        btn_save.Font = New Font("Segoe UI", 12.0F)
+        btn_save.Font = New Font("Segoe UI", 12F)
         btn_save.Location = New Point(839, 68)
         btn_save.Margin = New Padding(4)
         btn_save.Name = "btn_save"
@@ -251,7 +251,7 @@ Partial Class ImportForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 12.0F)
+        Label6.Font = New Font("Segoe UI", 12F)
         Label6.Location = New Point(24, 352)
         Label6.Margin = New Padding(4, 0, 4, 0)
         Label6.Name = "Label6"
@@ -261,12 +261,12 @@ Partial Class ImportForm
         ' 
         ' ImportForm
         ' 
-        AutoScaleDimensions = New SizeF(9.0F, 21.0F)
+        AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1029, 945)
         Controls.Add(gbox_importform)
         Controls.Add(dgv_importform)
-        Font = New Font("Segoe UI", 12.0F)
+        Font = New Font("Segoe UI", 12F)
         Margin = New Padding(4)
         Name = "ImportForm"
         Text = "ImportForm"

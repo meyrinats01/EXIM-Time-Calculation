@@ -23,6 +23,7 @@ Partial Class ExportForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         gbox_exportform = New GroupBox()
+        txtbox_packageexport = New TextBox()
         txtbox_spvteam = New TextBox()
         dtp_daydate = New DateTimePicker()
         Label8 = New Label()
@@ -30,13 +31,11 @@ Partial Class ExportForm
         dtp_finishload = New DateTimePicker()
         dtp_startload = New DateTimePicker()
         Label1 = New Label()
-        dtp_packageexport = New DateTimePicker()
         Label2 = New Label()
         DateTimePicker1 = New DateTimePicker()
         Label3 = New Label()
         btn_delete = New Button()
         Label4 = New Label()
-        btn_edit = New Button()
         Label5 = New Label()
         btn_save = New Button()
         Label6 = New Label()
@@ -47,6 +46,7 @@ Partial Class ExportForm
         ' 
         ' gbox_exportform
         ' 
+        gbox_exportform.Controls.Add(txtbox_packageexport)
         gbox_exportform.Controls.Add(txtbox_spvteam)
         gbox_exportform.Controls.Add(dtp_daydate)
         gbox_exportform.Controls.Add(Label8)
@@ -54,13 +54,11 @@ Partial Class ExportForm
         gbox_exportform.Controls.Add(dtp_finishload)
         gbox_exportform.Controls.Add(dtp_startload)
         gbox_exportform.Controls.Add(Label1)
-        gbox_exportform.Controls.Add(dtp_packageexport)
         gbox_exportform.Controls.Add(Label2)
         gbox_exportform.Controls.Add(DateTimePicker1)
         gbox_exportform.Controls.Add(Label3)
         gbox_exportform.Controls.Add(btn_delete)
         gbox_exportform.Controls.Add(Label4)
-        gbox_exportform.Controls.Add(btn_edit)
         gbox_exportform.Controls.Add(Label5)
         gbox_exportform.Controls.Add(btn_save)
         gbox_exportform.Controls.Add(Label6)
@@ -73,6 +71,15 @@ Partial Class ExportForm
         gbox_exportform.TabIndex = 33
         gbox_exportform.TabStop = False
         gbox_exportform.Text = "Export Form"
+        ' 
+        ' txtbox_packageexport
+        ' 
+        txtbox_packageexport.Font = New Font("Segoe UI", 12F)
+        txtbox_packageexport.Location = New Point(404, 289)
+        txtbox_packageexport.Margin = New Padding(4)
+        txtbox_packageexport.Name = "txtbox_packageexport"
+        txtbox_packageexport.Size = New Size(345, 29)
+        txtbox_packageexport.TabIndex = 33
         ' 
         ' txtbox_spvteam
         ' 
@@ -143,16 +150,6 @@ Partial Class ExportForm
         Label1.TabIndex = 8
         Label1.Text = "Day/Date"
         ' 
-        ' dtp_packageexport
-        ' 
-        dtp_packageexport.Font = New Font("Segoe UI", 12F)
-        dtp_packageexport.Format = DateTimePickerFormat.Time
-        dtp_packageexport.Location = New Point(404, 287)
-        dtp_packageexport.Margin = New Padding(4)
-        dtp_packageexport.Name = "dtp_packageexport"
-        dtp_packageexport.Size = New Size(345, 29)
-        dtp_packageexport.TabIndex = 26
-        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
@@ -206,17 +203,6 @@ Partial Class ExportForm
         Label4.TabIndex = 11
         Label4.Text = "Finish Load"
         ' 
-        ' btn_edit
-        ' 
-        btn_edit.Font = New Font("Segoe UI", 12F)
-        btn_edit.Location = New Point(839, 190)
-        btn_edit.Margin = New Padding(4)
-        btn_edit.Name = "btn_edit"
-        btn_edit.Size = New Size(129, 67)
-        btn_edit.TabIndex = 16
-        btn_edit.Text = "EDIT"
-        btn_edit.UseVisualStyleBackColor = True
-        ' 
         ' Label5
         ' 
         Label5.AutoSize = True
@@ -231,7 +217,7 @@ Partial Class ExportForm
         ' btn_save
         ' 
         btn_save.Font = New Font("Segoe UI", 12F)
-        btn_save.Location = New Point(839, 68)
+        btn_save.Location = New Point(839, 176)
         btn_save.Margin = New Padding(4)
         btn_save.Name = "btn_save"
         btn_save.Size = New Size(129, 67)
@@ -268,6 +254,7 @@ Partial Class ExportForm
         Controls.Add(dgv_exportform)
         Font = New Font("Segoe UI", 12F)
         Margin = New Padding(4)
+        MaximizeBox = False
         Name = "ExportForm"
         Text = "ExportForm"
         gbox_exportform.ResumeLayout(False)
@@ -284,15 +271,14 @@ Partial Class ExportForm
     Friend WithEvents dtp_finishload As DateTimePicker
     Friend WithEvents dtp_startload As DateTimePicker
     Friend WithEvents Label1 As Label
-    Friend WithEvents dtp_packageexport As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label3 As Label
     Friend WithEvents btn_delete As Button
     Friend WithEvents Label4 As Label
-    Friend WithEvents btn_edit As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents btn_save As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents dgv_exportform As DataGridView
+    Friend WithEvents txtbox_packageexport As TextBox
 End Class

@@ -8,10 +8,11 @@ Public Class SailingForm
         dtp_ata.Value = Date.Now
         dtp_etd.Value = Date.Now
         dtp_atd.Value = Date.Now
+        btn_save.Text = "Save"
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT * FROM ship_data WHERE deleted_at='0'", conn)
+        da = New OdbcDataAdapter("SELECT id, date, vessel, captain, estimate_time_arrival, actual_time_arrival, package_import_quantity, voyage_number, estimate_time_departure, actual_time_departure, package_export_quantity, created_at FROM ship_data WHERE deleted_at='0'", conn)
         ds = New DataSet
         da.Fill(ds, "ship_data")
         dgv_sailingform.DataSource = ds.Tables("ship_data")
@@ -63,15 +64,6 @@ Public Class SailingForm
         dgv_sailingform.Columns(10).HeaderText = "Package Export Quantity"
         dgv_sailingform.Columns(11).HeaderText = "Created At"
     End Sub
-
-    Function ConvertDateTimeToUnix(param As DateTime)
-        Dim unixTime = New DateTimeOffset(param).ToUnixTimeSeconds
-        Return unixTime
-    End Function
-    Function ConvertUnixToDateTime(param As Long)
-        Dim dateTimeValue = DateTimeOffset.FromUnixTimeSeconds(param).DateTime
-        Return dateTimeValue
-    End Function
     Private Sub SailingForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Menu.Show()
     End Sub

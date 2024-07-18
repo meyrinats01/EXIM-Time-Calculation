@@ -295,6 +295,7 @@ Partial Class SailingForm
         Controls.Add(dgv_sailingform)
         Font = New Font("Segoe UI", 12F)
         Margin = New Padding(4)
+        MaximizeBox = False
         Name = "SailingForm"
         Text = "SailingForm"
         CType(dgv_sailingform, ComponentModel.ISupportInitialize).EndInit()

@@ -15,4 +15,12 @@ Module connection
             conn.Open()
         End If
     End Sub
+    Public Function ConvertDateTimeToUnix(param As DateTime)
+        Dim unixTime = New DateTimeOffset(param).ToUnixTimeSeconds
+        Return unixTime
+    End Function
+    Public Function ConvertUnixToDateTime(param As Long)
+        Dim dateTimeValue = DateTimeOffset.FromUnixTimeSeconds(param).DateTime
+        Return dateTimeValue
+    End Function
 End Module

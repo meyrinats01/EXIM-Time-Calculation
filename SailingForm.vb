@@ -1,5 +1,8 @@
 ﻿Imports System.Data.Odbc
 Public Class SailingForm
+    Dim dateUnix, etaUnix, ataUnix, etdUnix, atdUnix As Long
+    Dim createdAt As Long
+
     Sub clearField()
         dtp_daydate.Value = Date.Now
         txtbox_vesselname.Text = ""
@@ -11,10 +14,10 @@ Public Class SailingForm
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT * FROM sailing WHERE deleted_at=''", conn)
+        da = New OdbcDataAdapter("SELECT * FROM ship_data WHERE deleted_at=''", conn)
         ds = New DataSet
-        da.Fill(ds, "sailing")
-        dgv_sailingform.DataSource = ds.Tables("sailing")
+        da.Fill(ds, "ship_data")
+        dgv_sailingform.DataSource = ds.Tables("ship_data")
         conn.Close()
     End Sub
     Sub DeleteRecord(param As String)
@@ -64,7 +67,14 @@ Public Class SailingForm
         End If
 
         dbconnection()
-        command = "INSERT INTO sailing (day_date, vessel_name, captain, eta, ata, etd, atd) VALUES ('" & dtp_daydate.Value & "','" & txtbox_vesselname.Text & "','" & txtbox_captain.Text & "','" & dtp_eta.Value & "','" & dtp_ata.Value & "','" & dtp_etd.Value & "','" & dtp_atd.Value & "')"
+        ' Convert datetimepicker value to unix time seconds
+        dateUnix = New DateTimeOffset(dtp_daydate.Value).ToUnixTimeSeconds
+        etaUnix = New DateTimeOffset(dtp_eta.Value).ToUnixTimeSeconds
+        ataUnix = New DateTimeOffset(dtp_ata.Value).ToUnixTimeSeconds
+        etdUnix = New DateTimeOffset(dtp_etd.Value).ToUnixTimeSeconds
+        atdUnix = New DateTimeOffset(dtp_atd.Value).ToUnixTimeSeconds
+        createdAt = New DateTimeOffset(Date.Now).ToUnixTimeSeconds
+        command = "INSERT INTO ship_data (date, vessel, captain, estimate_time_arrival, actual_time_arrival, estimate_time_departure, actual_time_departure,created_at) VALUES ('" & dateUnix & "','" & txtbox_vesselname.Text & "','" & txtbox_captain.Text & "','" & etaUnix & "','" & ataUnix & "','" & etdUnix & "','" & atdUnix & "','" & createdAt & "')"
         query = New OdbcCommand(command, conn)
         query.ExecuteNonQuery()
         If MessageBox.Show("Data saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK Then

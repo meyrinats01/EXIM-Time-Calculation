@@ -53,6 +53,7 @@ Partial Class SailingForm
         dgv_sailingform.Location = New Point(15, 487)
         dgv_sailingform.Margin = New Padding(4)
         dgv_sailingform.Name = "dgv_sailingform"
+        dgv_sailingform.ReadOnly = True
         dgv_sailingform.Size = New Size(998, 441)
         dgv_sailingform.TabIndex = 0
         ' 
@@ -154,7 +155,7 @@ Partial Class SailingForm
         ' btn_save
         ' 
         btn_save.Font = New Font("Segoe UI", 12F)
-        btn_save.Location = New Point(846, 136)
+        btn_save.Location = New Point(846, 240)
         btn_save.Margin = New Padding(4)
         btn_save.Name = "btn_save"
         btn_save.Size = New Size(129, 67)
@@ -165,13 +166,14 @@ Partial Class SailingForm
         ' btn_edit
         ' 
         btn_edit.Font = New Font("Segoe UI", 12F)
-        btn_edit.Location = New Point(846, 258)
+        btn_edit.Location = New Point(861, 15)
         btn_edit.Margin = New Padding(4)
         btn_edit.Name = "btn_edit"
         btn_edit.Size = New Size(129, 67)
         btn_edit.TabIndex = 16
         btn_edit.Text = "EDIT"
         btn_edit.UseVisualStyleBackColor = True
+        btn_edit.Visible = False
         ' 
         ' btn_delete
         ' 

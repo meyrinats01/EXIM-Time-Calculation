@@ -242,6 +242,7 @@ Partial Class ExportForm
         dgv_exportform.Location = New Point(13, 418)
         dgv_exportform.Margin = New Padding(4)
         dgv_exportform.Name = "dgv_exportform"
+        dgv_exportform.ReadOnly = True
         dgv_exportform.Size = New Size(1003, 510)
         dgv_exportform.TabIndex = 32
         ' 

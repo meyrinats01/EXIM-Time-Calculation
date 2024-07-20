@@ -47,13 +47,6 @@ Public Class ExportForm
 
         conn.Close()
     End Sub
-    Function TextBoxValidateNumberOnly(e As KeyPressEventArgs)
-        If Not (Asc(e.KeyChar) = 8) Then
-            If Not (Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57) Then
-                e.Handled = True
-            End If
-        End If
-    End Function
     Sub DeleteRecord(param As String)
         If MessageBox.Show("Are you sure want to delete item?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Dim now = ConvertDateTimeToUnix(Date.Now)
@@ -104,13 +97,10 @@ Public Class ExportForm
     End Sub
 
     Private Sub txtbox_packageexport_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbox_packageexport.KeyPress
-        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
+        TextBoxValidateNumberOnly(e)
     End Sub
 
     Private Sub txtbox_packageexport_TextChanged(sender As Object, e As EventArgs) Handles txtbox_packageexport.TextChanged
-        Dim digitsOnly As New System.Text.RegularExpressions.Regex("[^\d]")
         txtbox_packageexport.Text = digitsOnly.Replace(txtbox_packageexport.Text, "")
         txtbox_packageexport.SelectionStart = txtbox_packageexport.Text.Length
     End Sub

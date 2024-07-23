@@ -10,7 +10,7 @@ Module connection
     Public createdAt As Long
     Public digitsOnly As New System.Text.RegularExpressions.Regex("[^\d]")
     Public Sub dbconnection()
-        Dim teks As String = "driver=MySQL ODBC 8.4 ANSI Driver;dsn=eximtimecalculation.dsn;server=ritalinserver.ddns.net;uid=ariebrainware;password=huvtex-diqjuK-2bakmi;database=pinguinferryjasa;port=13306"
+        Dim teks As String = "driver=MySQL ODBC 8.4 ANSI Driver;dsn=eximtimecalculation.dsn;server=ritalinserver.ddns.net;uid=ariebrainware;password=huvtex-diqjuK-2bakmi;database=pinguinferryjasa;port=13306;timezone=asia/jakarta;"
         conn = New OdbcConnection(teks)
         If conn.State = ConnectionState.Closed Then
             conn.Open()
@@ -30,7 +30,11 @@ Module connection
         Return
     End Sub
     Public Function ConvertUnixToDateTime(param As Long)
-        Dim dateTimeValue = DateTimeOffset.FromUnixTimeSeconds(param).DateTime
+        Dim dateTimeValue = DateTimeOffset.FromUnixTimeSeconds(param).DateTime.ToLocalTime
+        Return dateTimeValue
+    End Function
+    Public Function DataGridItemDateTimeStringToDateTimeValue(param As String)
+        Dim dateTimeValue = DateTimeOffset.Parse(param).DateTime.ToLocalTime
         Return dateTimeValue
     End Function
 End Module

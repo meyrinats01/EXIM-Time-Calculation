@@ -33,7 +33,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.EXIM_Time_Calculation.ImportForm
+            Me.MainForm = Global.EXIM_Time_Calculation.SailingForm
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

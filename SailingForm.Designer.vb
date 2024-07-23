@@ -33,7 +33,6 @@ Partial Class SailingForm
         Label6 = New Label()
         Label7 = New Label()
         btn_save = New Button()
-        btn_edit = New Button()
         btn_delete = New Button()
         DateTimePicker1 = New DateTimePicker()
         dtp_etd = New DateTimePicker()
@@ -163,18 +162,6 @@ Partial Class SailingForm
         btn_save.Text = "SAVE"
         btn_save.UseVisualStyleBackColor = True
         ' 
-        ' btn_edit
-        ' 
-        btn_edit.Font = New Font("Segoe UI", 12F)
-        btn_edit.Location = New Point(861, 15)
-        btn_edit.Margin = New Padding(4)
-        btn_edit.Name = "btn_edit"
-        btn_edit.Size = New Size(129, 67)
-        btn_edit.TabIndex = 16
-        btn_edit.Text = "EDIT"
-        btn_edit.UseVisualStyleBackColor = True
-        btn_edit.Visible = False
-        ' 
         ' btn_delete
         ' 
         btn_delete.Font = New Font("Segoe UI", 12F)
@@ -237,6 +224,7 @@ Partial Class SailingForm
         ' 
         ' gbox_sailingform
         ' 
+        gbox_sailingform.AutoSize = True
         gbox_sailingform.Controls.Add(dtp_daydate)
         gbox_sailingform.Controls.Add(Label8)
         gbox_sailingform.Controls.Add(Label7)
@@ -252,7 +240,6 @@ Partial Class SailingForm
         gbox_sailingform.Controls.Add(Label3)
         gbox_sailingform.Controls.Add(btn_delete)
         gbox_sailingform.Controls.Add(Label4)
-        gbox_sailingform.Controls.Add(btn_edit)
         gbox_sailingform.Controls.Add(Label5)
         gbox_sailingform.Controls.Add(btn_save)
         gbox_sailingform.Controls.Add(Label6)
@@ -261,7 +248,7 @@ Partial Class SailingForm
         gbox_sailingform.Margin = New Padding(4)
         gbox_sailingform.Name = "gbox_sailingform"
         gbox_sailingform.Padding = New Padding(4)
-        gbox_sailingform.Size = New Size(998, 462)
+        gbox_sailingform.Size = New Size(998, 469)
         gbox_sailingform.TabIndex = 30
         gbox_sailingform.TabStop = False
         gbox_sailingform.Text = "Sailing Form"
@@ -294,6 +281,7 @@ Partial Class SailingForm
         Controls.Add(gbox_sailingform)
         Controls.Add(dgv_sailingform)
         Font = New Font("Segoe UI", 12F)
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Margin = New Padding(4)
         MaximizeBox = False
         Name = "SailingForm"
@@ -302,6 +290,7 @@ Partial Class SailingForm
         gbox_sailingform.ResumeLayout(False)
         gbox_sailingform.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents dgv_sailingform As DataGridView
@@ -315,7 +304,6 @@ Partial Class SailingForm
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents btn_save As Button
-    Friend WithEvents btn_edit As Button
     Friend WithEvents btn_delete As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents dtp_etd As DateTimePicker

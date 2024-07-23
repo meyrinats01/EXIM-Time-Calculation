@@ -12,7 +12,7 @@ Public Class SailingForm
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT id, date, vessel, captain, estimate_time_arrival, actual_time_arrival, package_import_quantity, voyage_number, estimate_time_departure, actual_time_departure, package_export_quantity, created_at FROM ship_data WHERE deleted_at='0'", conn)
+        da = New OdbcDataAdapter("SELECT id, DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y '), vessel, captain, DATE_FORMAT(FROM_UNIXTIME(estimate_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(estimate_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') FROM ship_data WHERE deleted_at='0'", conn)
         ds = New DataSet
         da.Fill(ds, "ship_data")
         dgv_sailingform.DataSource = ds.Tables("ship_data")
@@ -32,8 +32,6 @@ Public Class SailingForm
 
     Sub UpdateRecord(param As String)
         dbconnection()
-        'command = "SELECT * FROM ship_data WHERE id = '" & param & "'"
-        ' Convert datetimepicker value to unix time seconds
         dateUnix = New DateTimeOffset(dtp_daydate.Value).ToUnixTimeSeconds
         etaUnix = New DateTimeOffset(dtp_eta.Value).ToUnixTimeSeconds
         ataUnix = New DateTimeOffset(dtp_ata.Value).ToUnixTimeSeconds
@@ -57,12 +55,9 @@ Public Class SailingForm
         dgv_sailingform.Columns(3).HeaderText = "Captain"
         dgv_sailingform.Columns(4).HeaderText = "Estimate Time Arrival"
         dgv_sailingform.Columns(5).HeaderText = "Actual Time Arrival"
-        dgv_sailingform.Columns(6).HeaderText = "Package Import Quantity"
-        dgv_sailingform.Columns(7).HeaderText = "Voyage Number"
-        dgv_sailingform.Columns(8).HeaderText = "Estimate Time Departure"
-        dgv_sailingform.Columns(9).HeaderText = "Actual Time Departure"
-        dgv_sailingform.Columns(10).HeaderText = "Package Export Quantity"
-        dgv_sailingform.Columns(11).HeaderText = "Created At"
+        dgv_sailingform.Columns(6).HeaderText = "Estimate Time Departure"
+        dgv_sailingform.Columns(7).HeaderText = "Actual Time Departure"
+        dgv_sailingform.Columns(8).HeaderText = "Created At"
     End Sub
     Private Sub SailingForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Menu.Show()
@@ -70,24 +65,23 @@ Public Class SailingForm
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         If btn_save.Text = "Update" Then
-
             UpdateRecord(selectedID)
-        End If
-
-        dbconnection()
-        ' Convert datetimepicker value to unix time seconds
-        dateUnix = New DateTimeOffset(dtp_daydate.Value).ToUnixTimeSeconds
-        etaUnix = New DateTimeOffset(dtp_eta.Value).ToUnixTimeSeconds
-        ataUnix = New DateTimeOffset(dtp_ata.Value).ToUnixTimeSeconds
-        etdUnix = New DateTimeOffset(dtp_etd.Value).ToUnixTimeSeconds
-        atdUnix = New DateTimeOffset(dtp_atd.Value).ToUnixTimeSeconds
-        createdAt = New DateTimeOffset(Date.Now).ToUnixTimeSeconds
-        command = "INSERT INTO ship_data (date, vessel, captain, estimate_time_arrival, actual_time_arrival, estimate_time_departure, actual_time_departure,created_at) VALUES ('" & dateUnix & "','" & txtbox_vesselname.Text & "','" & txtbox_captain.Text & "','" & etaUnix & "','" & ataUnix & "','" & etdUnix & "','" & atdUnix & "','" & createdAt & "')"
-        query = New OdbcCommand(command, conn)
-        query.ExecuteNonQuery()
-        If MessageBox.Show("Data saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK Then
-            showData()
-            clearField()
+        Else
+            dbconnection()
+            ' Convert datetimepicker value to unix time seconds
+            dateUnix = New DateTimeOffset(dtp_daydate.Value).ToUnixTimeSeconds
+            etaUnix = New DateTimeOffset(dtp_eta.Value).ToUnixTimeSeconds
+            ataUnix = New DateTimeOffset(dtp_ata.Value).ToUnixTimeSeconds
+            etdUnix = New DateTimeOffset(dtp_etd.Value).ToUnixTimeSeconds
+            atdUnix = New DateTimeOffset(dtp_atd.Value).ToUnixTimeSeconds
+            createdAt = New DateTimeOffset(Date.Now).ToUnixTimeSeconds
+            command = "INSERT INTO ship_data (date, vessel, captain, estimate_time_arrival, actual_time_arrival, estimate_time_departure, actual_time_departure,created_at) VALUES ('" & dateUnix & "','" & txtbox_vesselname.Text & "','" & txtbox_captain.Text & "','" & etaUnix & "','" & ataUnix & "','" & etdUnix & "','" & atdUnix & "','" & createdAt & "')"
+            query = New OdbcCommand(command, conn)
+            query.ExecuteNonQuery()
+            If MessageBox.Show("Data saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK Then
+                showData()
+                clearField()
+            End If
         End If
     End Sub
 
@@ -97,13 +91,13 @@ Public Class SailingForm
             i = dgv_sailingform.CurrentRow.Index
 
             selectedID = dgv_sailingform.Item(0, i).Value
-            dtp_daydate.Value = ConvertUnixToDateTime(dgv_sailingform.Item(1, i).Value)
+            dtp_daydate.Value = dgv_sailingform.Item(1, i).Value
             txtbox_vesselname.Text = dgv_sailingform.Item(2, i).Value
             txtbox_captain.Text = dgv_sailingform.Item(3, i).Value
-            dtp_eta.Value = ConvertUnixToDateTime(dgv_sailingform.Item(4, i).Value)
-            dtp_ata.Value = ConvertUnixToDateTime(dgv_sailingform.Item(5, i).Value)
-            dtp_etd.Value = ConvertUnixToDateTime(dgv_sailingform.Item(8, i).Value)
-            dtp_atd.Value = ConvertUnixToDateTime(dgv_sailingform.Item(9, i).Value)
+            dtp_eta.Value = dgv_sailingform.Item(4, i).Value
+            dtp_ata.Value = dgv_sailingform.Item(5, i).Value
+            dtp_etd.Value = dgv_sailingform.Item(6, i).Value
+            dtp_atd.Value = dgv_sailingform.Item(7, i).Value
             btn_save.Text = "Update"
         End If
     End Sub

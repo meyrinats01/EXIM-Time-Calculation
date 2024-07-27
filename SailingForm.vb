@@ -12,7 +12,7 @@ Public Class SailingForm
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT id, DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y '), vessel, captain, DATE_FORMAT(FROM_UNIXTIME(estimate_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(estimate_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') FROM ship_data WHERE deleted_at='0'", conn)
+        da = New OdbcDataAdapter("SELECT id, DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y '), vessel, captain, DATE_FORMAT(FROM_UNIXTIME(estimate_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(estimate_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') FROM ship_data WHERE deleted_at='0' OR deleted_at=''", conn)
         ds = New DataSet
         da.Fill(ds, "ship_data")
         dgv_sailingform.DataSource = ds.Tables("ship_data")

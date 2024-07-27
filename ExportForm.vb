@@ -111,10 +111,10 @@ Public Class ExportForm
             i = dgv_exportform.CurrentRow.Index
 
             selectedID = dgv_exportform.Item(0, i).Value
-            dtp_daydate.Value = ConvertUnixToDateTime(dgv_exportform.Item(1, i).Value)
+            dtp_daydate.Value = dgv_exportform.Item(1, i).Value
             txtbox_voyagenumber.Text = dgv_exportform.Item(2, i).Value
-            dtp_startload.Value = ConvertUnixToDateTime(dgv_exportform.Item(3, i).Value)
-            dtp_finishload.Value = ConvertUnixToDateTime(dgv_exportform.Item(4, i).Value)
+            dtp_startload.Value = dgv_exportform.Item(3, i).Value
+            dtp_finishload.Value = dgv_exportform.Item(4, i).Value
             txtbox_packageexport.Text = dgv_exportform.Item(5, i).Value
             txtbox_spvteam.Text = dgv_exportform.Item(6, i).Value
             btn_save.Text = "Update"

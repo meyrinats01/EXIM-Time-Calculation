@@ -12,7 +12,7 @@ Public Class ImportForm
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT id, date, voyage_number, start_unloading_time, finish_unloading_time, quantity, team_supervisor, created_at FROM unloading_data WHERE deleted_at='0' OR deleted_at=''", conn)
+        da = New OdbcDataAdapter("SELECT id, DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y '), voyage_number, DATE_FORMAT(FROM_UNIXTIME(start_unloading_time), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(finish_unloading_time), '%c/%e/%Y %r'), quantity, team_supervisor, DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') FROM unloading_data WHERE deleted_at='0' OR deleted_at=''", conn)
         ds = New DataSet
         da.Fill(ds, "unloading_data")
         dgv_importform.DataSource = ds.Tables("unloading_data")

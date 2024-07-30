@@ -1,3 +1,5 @@
+USE pinguinferryjasa;
+
 -- Start Unloading Duration (START UNLOAD)
 SELECT unloading_data.voyage_number, unloading_data.team_supervisor, (unloading_data.start_unloading_time - ship_data.actual_time_arrival)/60
     AS start_unload FROM unloading_data, ship_data WHERE ship_data.deleted_at = 0;
@@ -14,8 +16,19 @@ SELECT loading_data.voyage_number, loading_data.team_supervisor, (unloading_data
 SELECT voyage_number, (loading_data.finish_loading_time - loading_data.start_loading_time)/60
     AS load_time FROM loading_data WHERE deleted_at = 0;
 
+-- Stevedore time = finish loading - start loading
+SELECT ship_data.vessel, (loading_data.finish_loading_time - unloading_data.start_unloading_time)/3600 AS stevedoring_time
+FROM ship_data,loading_data,unloading_data;
+
+-- ET. Turnround = ET. Departure - ET. Arrival
+SELECT ship_data.vessel, (ship_data.estimate_time_departure - ship_data.estimate_time_arrival)/3600 AS estimate_turnround FROM ship_data;
+
+-- AT. Turnround = AT. Departure - ET. Arrival
+SELECT ship_data.vessel, (ship_data.actual_time_departure - ship_data.actual_time_arrival)/3600
+    AS actual_turnround FROM ship_data WHERE !deleted_at OR deleted_at=0;
+
 SELECT vessel,captain,DATE_FORMAT(FROM_UNIXTIME(ship_data.estimate_time_arrival), '%c/%e/%Y %r') AS FormattedDate
 FROM ship_data WHERE deleted_at=0;
 
-
-
+-- DRAFT SQL for Calculation Form
+SELECT ship_data.date, ship_data.vessel, ship_data.captain, unloading_data.voyage_number, unloading_data. FROM ship_data,unloading_data;

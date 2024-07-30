@@ -25,11 +25,11 @@ Partial Class CalculationForm
         lbl_loading = New Label()
         Label1 = New Label()
         Label2 = New Label()
-        DateTimePicker1 = New DateTimePicker()
-        DateTimePicker2 = New DateTimePicker()
-        DataGridView1 = New DataGridView()
-        Button1 = New Button()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        dtp_datefrom = New DateTimePicker()
+        dtp_dateto = New DateTimePicker()
+        dgv_timecalculationreport = New DataGridView()
+        btn_viewreport = New Button()
+        CType(dgv_timecalculationreport, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' lbl_loading
@@ -62,50 +62,50 @@ Partial Class CalculationForm
         Label2.TabIndex = 6
         Label2.Text = "To"
         ' 
-        ' DateTimePicker1
+        ' dtp_datefrom
         ' 
-        DateTimePicker1.Font = New Font("Segoe UI", 12F)
-        DateTimePicker1.Location = New Point(44, 173)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(249, 29)
-        DateTimePicker1.TabIndex = 7
+        dtp_datefrom.Font = New Font("Segoe UI", 12F)
+        dtp_datefrom.Location = New Point(44, 173)
+        dtp_datefrom.Name = "dtp_datefrom"
+        dtp_datefrom.Size = New Size(249, 29)
+        dtp_datefrom.TabIndex = 7
         ' 
-        ' DateTimePicker2
+        ' dtp_dateto
         ' 
-        DateTimePicker2.Font = New Font("Segoe UI", 12F)
-        DateTimePicker2.Location = New Point(371, 173)
-        DateTimePicker2.Name = "DateTimePicker2"
-        DateTimePicker2.Size = New Size(249, 29)
-        DateTimePicker2.TabIndex = 8
+        dtp_dateto.Font = New Font("Segoe UI", 12F)
+        dtp_dateto.Location = New Point(371, 173)
+        dtp_dateto.Name = "dtp_dateto"
+        dtp_dateto.Size = New Size(249, 29)
+        dtp_dateto.TabIndex = 8
         ' 
-        ' DataGridView1
+        ' dgv_timecalculationreport
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(22, 223)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(1703, 506)
-        DataGridView1.TabIndex = 9
+        dgv_timecalculationreport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgv_timecalculationreport.Location = New Point(22, 223)
+        dgv_timecalculationreport.Name = "dgv_timecalculationreport"
+        dgv_timecalculationreport.Size = New Size(1703, 506)
+        dgv_timecalculationreport.TabIndex = 9
         ' 
-        ' Button1
+        ' btn_viewreport
         ' 
-        Button1.Font = New Font("Segoe UI", 12F)
-        Button1.Location = New Point(646, 164)
-        Button1.Margin = New Padding(4)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(128, 38)
-        Button1.TabIndex = 34
-        Button1.Text = "View Report"
-        Button1.UseVisualStyleBackColor = True
+        btn_viewreport.Font = New Font("Segoe UI", 12F)
+        btn_viewreport.Location = New Point(646, 164)
+        btn_viewreport.Margin = New Padding(4)
+        btn_viewreport.Name = "btn_viewreport"
+        btn_viewreport.Size = New Size(128, 38)
+        btn_viewreport.TabIndex = 34
+        btn_viewreport.Text = "View Report"
+        btn_viewreport.UseVisualStyleBackColor = True
         ' 
         ' CalculationForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1737, 741)
-        Controls.Add(Button1)
-        Controls.Add(DataGridView1)
-        Controls.Add(DateTimePicker2)
-        Controls.Add(DateTimePicker1)
+        Controls.Add(btn_viewreport)
+        Controls.Add(dgv_timecalculationreport)
+        Controls.Add(dtp_dateto)
+        Controls.Add(dtp_datefrom)
         Controls.Add(Label2)
         Controls.Add(lbl_loading)
         Controls.Add(Label1)
@@ -113,7 +113,7 @@ Partial Class CalculationForm
         MaximizeBox = False
         Name = "CalculationForm"
         Text = "Calculation"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgv_timecalculationreport, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -121,8 +121,8 @@ Partial Class CalculationForm
     Friend WithEvents lbl_loading As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
+    Friend WithEvents dtp_datefrom As DateTimePicker
+    Friend WithEvents dtp_dateto As DateTimePicker
+    Friend WithEvents dgv_timecalculationreport As DataGridView
+    Friend WithEvents btn_viewreport As Button
 End Class

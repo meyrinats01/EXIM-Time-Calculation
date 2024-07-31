@@ -8,7 +8,19 @@ Public Class CalculationForm
         dgv_timecalculationreport.DataSource = ds.Tables("loading_data")
         conn.Close()
     End Sub
+    Sub filteredCalculationForm(dateForm As String, dateTo As String)
+        dbconnection()
+        Dim query As String = "SELECT * FROM calculation_form WHERE day_date BETWEEN ? AND ?"
+        Dim cmd As New OdbcCommand(query, conn)
+        cmd.Parameters.AddWithValue("?", dateForm)
+        cmd.Parameters.AddWithValue("?", dateTo)
+        da = New OdbcDataAdapter(cmd)
+        ds = New DataSet
+        da.Fill(ds, "calculation_form")
+        dgv_timecalculationreport.DataSource = ds.Tables("calculation_form")
+        conn.Close()
+    End Sub
     Private Sub btn_viewreport_Click(sender As Object, e As EventArgs) Handles btn_viewreport.Click
-
+        filteredCalculationForm(dtp_datefrom.Value, dtp_dateto.Value)
     End Sub
 End Class

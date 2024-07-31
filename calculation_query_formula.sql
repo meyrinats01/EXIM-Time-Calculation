@@ -32,26 +32,63 @@ FROM ship_data WHERE deleted_at=0;
 
 -- DRAFT SQL for Calculation Form
 CREATE VIEW calculation_form AS
-    SELECT DATE_FORMAT(FROM_UNIXTIME(ship_data.date), '%c/%e/%Y %r') AS day_date,
-       ship_data.vessel,
-       ship_data.captain,
-       unloading_data.voyage_number AS import_voyage_number,
-       unloading_data.team_supervisor AS import_team_supervisor,
-       (unloading_data.start_unloading_time - ship_data.actual_time_arrival)/60 AS start_unload,
-       (unloading_data.finish_unloading_time - unloading_data.start_unloading_time)/60 AS unload_time,
-       unloading_data.quantity AS package_import,
-       loading_data.voyage_number AS export_voyage_number,
-       loading_data.team_supervisor AS export_team_supervisor,
-       (unloading_data.finish_unloading_time - loading_data.start_loading_time)/60 AS start_load,
-       (loading_data.finish_loading_time - loading_data.start_loading_time)/60 AS load_time,
-       loading_data.quantity AS package_export,
-       (loading_data.finish_loading_time - unloading_data.start_unloading_time)/3600 AS stevedoring_time,
-       (ship_data.estimate_time_departure - ship_data.estimate_time_arrival)/3600 AS estimate_turnround,
-       (ship_data.actual_time_departure - ship_data.actual_time_arrival)/3600 AS actual_turnround
-FROM ship_data, unloading_data, loading_data WHERE ship_data.deleted_at!=0 OR unloading_data.deleted_at!=0 OR loading_data.deleted_at!=0;
+    SELECT
+    DATE_FORMAT(FROM_UNIXTIME(ship_data.date), '%c/%e/%Y') AS day_date,
+    ship_data.vessel,
+    ship_data.captain,
+    unloading_data.voyage_number AS import_voyage_number,
+    unloading_data.team_supervisor AS import_team_supervisor,
+    (unloading_data.start_unloading_time - ship_data.actual_time_arrival)/60 AS start_unload,
+    (unloading_data.finish_unloading_time - unloading_data.start_unloading_time)/60 AS unload_time,
+    unloading_data.quantity AS package_import,
+    loading_data.voyage_number AS export_voyage_number,
+    loading_data.team_supervisor AS export_team_supervisor,
+    (unloading_data.finish_unloading_time - loading_data.start_loading_time)/60 AS start_load,
+    (loading_data.finish_loading_time - loading_data.start_loading_time)/60 AS load_time,
+    loading_data.quantity AS package_export,
+    (loading_data.finish_loading_time - unloading_data.start_unloading_time)/3600 AS stevedoring_time,
+    (ship_data.estimate_time_departure - ship_data.estimate_time_arrival)/3600 AS estimate_turnround,
+    (ship_data.actual_time_departure - ship_data.actual_time_arrival)/3600 AS actual_turnround
+FROM
+    ship_data
+INNER JOIN
+    unloading_data ON DATE_FORMAT(FROM_UNIXTIME(ship_data.date), '%c/%e/%Y') = DATE_FORMAT(FROM_UNIXTIME(unloading_data.date), '%c/%e/%Y')
+INNER JOIN
+    loading_data ON DATE_FORMAT(FROM_UNIXTIME(unloading_data.date), '%c/%e/%Y') = DATE_FORMAT(FROM_UNIXTIME(loading_data.date), '%c/%e/%Y')
+WHERE
+    ship_data.deleted_at = 0
+    AND unloading_data.deleted_at = 0
+    AND loading_data.deleted_at = 0;
 
 SELECT * FROM calculation_form WHERE day_date BETWEEN '7/23/2024 07:37:34 PM' AND '7/31/2024 07:37:34 PM';
 
 
 DROP VIEW calculation_form;
 
+SELECT
+    DATE_FORMAT(FROM_UNIXTIME(ship_data.date), '%c/%e/%Y') AS day_date,
+    ship_data.vessel,
+    ship_data.captain,
+    unloading_data.voyage_number AS import_voyage_number,
+    unloading_data.team_supervisor AS import_team_supervisor,
+    (unloading_data.start_unloading_time - ship_data.actual_time_arrival)/60 AS start_unload,
+    (unloading_data.finish_unloading_time - unloading_data.start_unloading_time)/60 AS unload_time,
+    unloading_data.quantity AS package_import,
+    loading_data.voyage_number AS export_voyage_number,
+    loading_data.team_supervisor AS export_team_supervisor,
+    (unloading_data.finish_unloading_time - loading_data.start_loading_time)/60 AS start_load,
+    (loading_data.finish_loading_time - loading_data.start_loading_time)/60 AS load_time,
+    loading_data.quantity AS package_export,
+    (loading_data.finish_loading_time - unloading_data.start_unloading_time)/3600 AS stevedoring_time,
+    (ship_data.estimate_time_departure - ship_data.estimate_time_arrival)/3600 AS estimate_turnround,
+    (ship_data.actual_time_departure - ship_data.actual_time_arrival)/3600 AS actual_turnround
+FROM
+    ship_data
+INNER JOIN
+    unloading_data ON DATE_FORMAT(FROM_UNIXTIME(ship_data.date), '%c/%e/%Y') = DATE_FORMAT(FROM_UNIXTIME(unloading_data.date), '%c/%e/%Y')
+INNER JOIN
+    loading_data ON DATE_FORMAT(FROM_UNIXTIME(unloading_data.date), '%c/%e/%Y') = DATE_FORMAT(FROM_UNIXTIME(loading_data.date), '%c/%e/%Y')
+WHERE
+    ship_data.deleted_at = 0
+    AND unloading_data.deleted_at = 0
+    AND loading_data.deleted_at = 0;

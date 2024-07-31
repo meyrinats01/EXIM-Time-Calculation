@@ -1,0 +1,10 @@
+[ODBC]
+DRIVER=MySQL ODBC 8.4 ANSI Driver
+UID=evolto
+USER=evolto
+SERVER=43.228.217.94
+PORT=23307
+PASSWORD=pdrK77wDfhtvz5E8G4I4
+NO_SCHEMA=1
+DB=pinguinferryjasa
+DATABASE=pinguinferryjasa

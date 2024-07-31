@@ -10,7 +10,7 @@ Module connection
     Public createdAt As Long
     Public digitsOnly As New System.Text.RegularExpressions.Regex("[^\d]")
     Public Sub dbconnection()
-        Dim teks As String = "driver=MySQL ODBC 8.4 ANSI Driver;dsn=eximtimecalculation.dsn;server=ritalinserver.ddns.net;uid=ariebrainware;password=huvtex-diqjuK-2bakmi;database=pinguinferryjasa;port=13306;timezone=asia/jakarta;"
+        Dim teks As String = "Dsn=evoamz3"
         conn = New OdbcConnection(teks)
         If conn.State = ConnectionState.Closed Then
             conn.Open()

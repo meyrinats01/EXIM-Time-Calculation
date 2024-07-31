@@ -9,7 +9,7 @@ Public Class Menu
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         dbconnection()
-        check = "SELECT * FROM users WHERE username='" & txtbox_username.Text & "' AND password=SHA2('" & txtbox_password.Text & "',512) AND is_active=true AND role='admin';"
+        check = "SELECT * FROM users WHERE username='" & txtbox_username.Text & "' AND password=SHA2('" & txtbox_password.Text & "',512) AND is_active=1 AND role='admin';"
         query = New OdbcCommand(check, conn)
         reader = query.ExecuteReader()
         While reader.Read()

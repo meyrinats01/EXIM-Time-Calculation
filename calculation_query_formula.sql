@@ -92,3 +92,7 @@ WHERE
     ship_data.deleted_at = 0
     AND unloading_data.deleted_at = 0
     AND loading_data.deleted_at = 0;
+
+
+INSERT INTO unloading_data (date, voyage_number, start_unloading_time, finish_unloading_time, quantity, team_supervisor, created_at)
+VALUES ('1720278969', 'B2272', '1720253409', '1720255269', '128', 'DEDY YUSRON', '1722439038')

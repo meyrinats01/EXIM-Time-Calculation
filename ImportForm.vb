@@ -12,7 +12,15 @@ Public Class ImportForm
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT id, DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y '), voyage_number, DATE_FORMAT(FROM_UNIXTIME(start_unloading_time), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(finish_unloading_time), '%c/%e/%Y %r'), quantity, team_supervisor, DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') FROM unloading_data WHERE deleted_at='0' OR deleted_at=''", conn)
+        da = New OdbcDataAdapter("SELECT id, 
+            DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y ') AS date, 
+            voyage_number, 
+            DATE_FORMAT(FROM_UNIXTIME(start_unloading_time), '%c/%e/%Y %r') AS start_unloading_time, 
+            DATE_FORMAT(FROM_UNIXTIME(finish_unloading_time), '%c/%e/%Y %r') AS finish_unloading_time, 
+            quantity, 
+            team_supervisor, 
+            DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') AS created_at 
+            FROM unloading_data WHERE deleted_at='0' OR deleted_at=''", conn)
         ds = New DataSet
         da.Fill(ds, "unloading_data")
         dgv_importform.DataSource = ds.Tables("unloading_data")
@@ -79,7 +87,7 @@ Public Class ImportForm
     Private Sub ImportForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgv_importform.Columns.Clear()
         showData()
-        setDGVColumHeader()
+        'setDGVColumHeader()
     End Sub
 
     Private Sub ImportForm_Closed(sender As Object, e As EventArgs) Handles Me.Closed

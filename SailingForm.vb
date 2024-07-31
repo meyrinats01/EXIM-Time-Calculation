@@ -12,7 +12,16 @@ Public Class SailingForm
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT id, DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y '), vessel, captain, DATE_FORMAT(FROM_UNIXTIME(estimate_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_arrival), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(estimate_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') FROM ship_data WHERE deleted_at='0' OR deleted_at=''", conn)
+        da = New OdbcDataAdapter("SELECT id, 
+            DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y ') AS date, 
+            vessel, 
+            captain, 
+            DATE_FORMAT(FROM_UNIXTIME(estimate_time_arrival), '%c/%e/%Y %r') AS estimate_time_arrival, 
+            DATE_FORMAT(FROM_UNIXTIME(actual_time_arrival), '%c/%e/%Y %r') AS actual_time_arrival, 
+            DATE_FORMAT(FROM_UNIXTIME(estimate_time_departure), '%c/%e/%Y %r') AS estimate_time_departure, 
+            DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r') AS actual_time_departure, 
+            DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') AS created_at 
+            FROM ship_data WHERE deleted_at='0' OR deleted_at=''", conn)
         ds = New DataSet
         da.Fill(ds, "ship_data")
         dgv_sailingform.DataSource = ds.Tables("ship_data")
@@ -105,7 +114,7 @@ Public Class SailingForm
     Private Sub SailingForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgv_sailingform.Columns.Clear()
         showData()
-        SetDGVHeader()
+        'SetDGVHeader()
     End Sub
 
     Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click

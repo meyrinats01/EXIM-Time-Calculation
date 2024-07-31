@@ -48,10 +48,10 @@ CREATE VIEW calculation_form AS
        (loading_data.finish_loading_time - unloading_data.start_unloading_time)/3600 AS stevedoring_time,
        (ship_data.estimate_time_departure - ship_data.estimate_time_arrival)/3600 AS estimate_turnround,
        (ship_data.actual_time_departure - ship_data.actual_time_arrival)/3600 AS actual_turnround
-FROM ship_data, unloading_data, loading_data WHERE NOT ship_data.deleted_at OR NOT unloading_data.deleted_at OR NOT loading_data.deleted_at;
+FROM ship_data, unloading_data, loading_data WHERE ship_data.deleted_at!=0 OR unloading_data.deleted_at!=0 OR loading_data.deleted_at!=0;
 
 SELECT * FROM calculation_form WHERE day_date BETWEEN '7/23/2024 07:37:34 PM' AND '7/31/2024 07:37:34 PM';
-"SELECT * FROM calculation_form WHERE day_date BETWEEN ? AND ?"
+
 
 DROP VIEW calculation_form;
 

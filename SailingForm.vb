@@ -48,7 +48,14 @@ Public Class SailingForm
         atdUnix = New DateTimeOffset(dtp_atd.Value).ToUnixTimeSeconds
         query = New OdbcCommand(command, conn)
 
-        command = "UPDATE ship_data SET date=" & dateUnix & ", vessel='" & txtbox_vesselname.Text & "', captain='" & txtbox_captain.Text & "', estimate_time_arrival=" & etaUnix & ", actual_time_arrival=" & ataUnix & ", estimate_time_departure=" & etdUnix & ", actual_time_departure=" & atdUnix & " WHERE id='" & param & "'"
+        command = "UPDATE ship_data SET date=" & dateUnix & ", 
+            vessel='" & txtbox_vesselname.Text & "', 
+            captain='" & txtbox_captain.Text & "', 
+            estimate_time_arrival=" & etaUnix & ", 
+            actual_time_arrival=" & ataUnix & ", 
+            estimate_time_departure=" & etdUnix & ", 
+            actual_time_departure=" & atdUnix & " 
+            WHERE id='" & param & "'"
         query = New OdbcCommand(command, conn)
         query.ExecuteNonQuery()
         MsgBox("Data updated successfully")

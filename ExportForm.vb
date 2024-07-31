@@ -13,7 +13,15 @@ Public Class ExportForm
     End Sub
     Sub showData()
         dbconnection()
-        da = New OdbcDataAdapter("SELECT id, DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y '), voyage_number, DATE_FORMAT(FROM_UNIXTIME(start_loading_time), '%c/%e/%Y %r'), DATE_FORMAT(FROM_UNIXTIME(finish_loading_time), '%c/%e/%Y %r'), quantity, team_supervisor, DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') FROM loading_data WHERE deleted_at='0' OR deleted_at=''", conn)
+        da = New OdbcDataAdapter("SELECT id, 
+            DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y ') AS date, 
+            voyage_number, 
+            DATE_FORMAT(FROM_UNIXTIME(start_loading_time), '%c/%e/%Y %r') AS start_loading_time,
+            DATE_FORMAT(FROM_UNIXTIME(finish_loading_time), '%c/%e/%Y %r') AS finish_loading_time, 
+            quantity, 
+            team_supervisor, 
+            DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') created_at 
+            FROM loading_data WHERE deleted_at='0' OR deleted_at=''", conn)
         ds = New DataSet
         da.Fill(ds, "loading_data")
         dgv_exportform.DataSource = ds.Tables("loading_data")
@@ -38,7 +46,13 @@ Public Class ExportForm
         finishLoadUnix = New DateTimeOffset(dtp_finishload.Value).ToUnixTimeSeconds
         query = New OdbcCommand(command, conn)
 
-        command = "UPDATE loading_data SET date=" & dateUnix & ", voyage_number='" & txtbox_voyagenumber.Text & "', start_loading_time=" & startLoadUnix & ", finish_loading_time=" & finishLoadUnix & ", quantity=" & txtbox_packageexport.Text & ", team_supervisor='" & txtbox_spvteam.Text & "' WHERE id='" & param & "'"
+        command = "UPDATE loading_data SET date=" & dateUnix & ", 
+            voyage_number='" & txtbox_voyagenumber.Text & "', 
+            start_loading_time=" & startLoadUnix & ", 
+            finish_loading_time=" & finishLoadUnix & ", 
+            quantity=" & txtbox_packageexport.Text & ", 
+            team_supervisor='" & txtbox_spvteam.Text & "' 
+            WHERE id='" & param & "'"
         query = New OdbcCommand(command, conn)
         query.ExecuteNonQuery()
         MsgBox("Data updated successfully")
@@ -65,7 +79,7 @@ Public Class ExportForm
     Private Sub ExportForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgv_exportform.Columns.Clear()
         showData()
-        setDGVColumHeader()
+        'setDGVColumHeader()
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click

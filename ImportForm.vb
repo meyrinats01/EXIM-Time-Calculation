@@ -113,10 +113,10 @@ Public Class ImportForm
         Dim i As Integer
         i = dgv_importform.CurrentRow.Index
         selectedID = dgv_importform.Item(0, i).Value
-        dtp_daydate.Value = ConvertUnixToDateTime(dgv_importform.Item(1, i).Value)
+        dtp_daydate.Value = dgv_importform.Item(1, i).Value
         txtbox_voyagenumber.Text = dgv_importform.Item(2, i).Value
-        dtp_startunload.Value = ConvertUnixToDateTime(dgv_importform.Item(3, i).Value)
-        dtp_finishunload.Value = ConvertUnixToDateTime(dgv_importform.Item(4, i).Value)
+        dtp_startunload.Value = dgv_importform.Item(3, i).Value
+        dtp_finishunload.Value = dgv_importform.Item(4, i).Value
         txtbox_packageimport.Text = dgv_importform.Item(5, i).Value
         txtbox_spvteam.Text = dgv_importform.Item(6, i).Value
         btn_save.Text = "Update"

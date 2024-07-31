@@ -100,24 +100,6 @@ Public Class SailingForm
             End If
         End If
     End Sub
-
-    Private Sub dgv_sailingform_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_sailingform.CellContentClick
-        If dgv_sailingform.RowCount > 0 Then
-            Dim i As Integer
-            i = dgv_sailingform.CurrentRow.Index
-
-            selectedID = dgv_sailingform.Item(0, i).Value
-            dtp_daydate.Value = dgv_sailingform.Item(1, i).Value
-            txtbox_vesselname.Text = dgv_sailingform.Item(2, i).Value
-            txtbox_captain.Text = dgv_sailingform.Item(3, i).Value
-            dtp_eta.Value = dgv_sailingform.Item(4, i).Value
-            dtp_ata.Value = dgv_sailingform.Item(5, i).Value
-            dtp_etd.Value = dgv_sailingform.Item(6, i).Value
-            dtp_atd.Value = dgv_sailingform.Item(7, i).Value
-            btn_save.Text = "Update"
-        End If
-    End Sub
-
     Private Sub SailingForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgv_sailingform.Columns.Clear()
         showData()
@@ -130,6 +112,22 @@ Public Class SailingForm
             Return
         Else
             DeleteRecord(selectedID)
+        End If
+    End Sub
+
+    Private Sub dgv_sailingform_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_sailingform.CellClick
+        If dgv_sailingform.RowCount > 0 Then
+            Dim i As Integer
+            i = dgv_sailingform.CurrentRow.Index
+            selectedID = dgv_sailingform.Item(0, i).Value
+            dtp_daydate.Value = dgv_sailingform.Item(1, i).Value
+            txtbox_vesselname.Text = dgv_sailingform.Item(2, i).Value
+            txtbox_captain.Text = dgv_sailingform.Item(3, i).Value
+            dtp_eta.Value = dgv_sailingform.Item(4, i).Value
+            dtp_ata.Value = dgv_sailingform.Item(5, i).Value
+            dtp_etd.Value = dgv_sailingform.Item(6, i).Value
+            dtp_atd.Value = dgv_sailingform.Item(7, i).Value
+            btn_save.Text = "Update"
         End If
     End Sub
 End Class

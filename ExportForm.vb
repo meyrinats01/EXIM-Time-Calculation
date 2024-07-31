@@ -119,7 +119,7 @@ Public Class ExportForm
         txtbox_packageexport.SelectionStart = txtbox_packageexport.Text.Length
     End Sub
 
-    Private Sub dgv_exportform_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_exportform.CellContentClick
+    Private Sub dgv_exportform_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_exportform.CellClick
         If dgv_exportform.RowCount > 0 Then
             Dim i As Integer
             i = dgv_exportform.CurrentRow.Index

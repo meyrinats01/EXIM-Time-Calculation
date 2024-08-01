@@ -20,13 +20,14 @@ Public Class ImportForm
             quantity, 
             team_supervisor, 
             DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') AS created_at 
-            FROM unloading_data WHERE deleted_at='0' OR deleted_at=''", conn)
+            FROM unloading_data WHERE deleted_at='0' OR deleted_at='' ORDER BY date DESC", conn)
         ds = New DataSet
         da.Fill(ds, "unloading_data")
         dgv_importform.DataSource = ds.Tables("unloading_data")
         conn.Close()
     End Sub
     Sub setDGVColumHeader()
+
         dgv_importform.Columns(0).HeaderText = "ID"
         dgv_importform.Columns(1).HeaderText = "Date"
         dgv_importform.Columns(2).HeaderText = "Voyage Number"
@@ -113,7 +114,7 @@ Public Class ImportForm
         Dim i As Integer
         i = dgv_importform.CurrentRow.Index
         selectedID = dgv_importform.Item(0, i).Value
-        dtp_daydate.Value = dgv_importform.Item(1, i).Value
+        dtp_daydate.Value = dgv_importform.Item(1, i).Value.ToString
         txtbox_voyagenumber.Text = dgv_importform.Item(2, i).Value
         dtp_startunload.Value = dgv_importform.Item(3, i).Value
         dtp_finishunload.Value = dgv_importform.Item(4, i).Value

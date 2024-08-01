@@ -96,3 +96,14 @@ WHERE
 
 INSERT INTO unloading_data (date, voyage_number, start_unloading_time, finish_unloading_time, quantity, team_supervisor, created_at)
 VALUES ('1720278969', 'B2272', '1720253409', '1720255269', '128', 'DEDY YUSRON', '1722439038')
+
+SELECT id,
+            DATE_FORMAT(FROM_UNIXTIME(date), '%c/%e/%Y ') AS date,
+            vessel,
+            captain,
+            DATE_FORMAT(FROM_UNIXTIME(estimate_time_arrival), '%c/%e/%Y %r') AS estimate_time_arrival,
+            DATE_FORMAT(FROM_UNIXTIME(actual_time_arrival), '%c/%e/%Y %r') AS actual_time_arrival,
+            DATE_FORMAT(FROM_UNIXTIME(estimate_time_departure), '%c/%e/%Y %r') AS estimate_time_departure,
+            DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r') AS actual_time_departure,
+            DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') AS created_at
+            FROM ship_data WHERE deleted_at='0' OR deleted_at='' ORDER BY ship_data.date DESC

@@ -21,7 +21,7 @@ Public Class ExportForm
             quantity, 
             team_supervisor, 
             DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') created_at 
-            FROM loading_data WHERE deleted_at='0' OR deleted_at='' ORDER BY date DESC", conn)
+            FROM loading_data WHERE deleted_at='0' OR deleted_at='' ORDER BY loading_data.date DESC", conn)
         ds = New DataSet
         da.Fill(ds, "loading_data")
         dgv_exportform.DataSource = ds.Tables("loading_data")

@@ -21,7 +21,7 @@ Public Class SailingForm
             DATE_FORMAT(FROM_UNIXTIME(estimate_time_departure), '%c/%e/%Y %r') AS estimate_time_departure, 
             DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r') AS actual_time_departure, 
             DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') AS created_at 
-            FROM ship_data WHERE deleted_at='0' OR deleted_at='' ORDER BY date DESC", conn)
+            FROM ship_data WHERE deleted_at='0' OR deleted_at='' ORDER BY ship_data.date DESC", conn)
         ds = New DataSet
         da.Fill(ds, "ship_data")
         dgv_sailingform.DataSource = ds.Tables("ship_data")

@@ -257,7 +257,7 @@ Partial Class ExportForm
         Margin = New Padding(4)
         MaximizeBox = False
         Name = "ExportForm"
-        Text = "ExportForm"
+        Text = "Export Form"
         gbox_exportform.ResumeLayout(False)
         gbox_exportform.PerformLayout()
         CType(dgv_exportform, ComponentModel.ISupportInitialize).EndInit()

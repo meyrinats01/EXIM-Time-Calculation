@@ -285,7 +285,7 @@ Partial Class SailingForm
         Margin = New Padding(4)
         MaximizeBox = False
         Name = "SailingForm"
-        Text = "SailingForm"
+        Text = "Sailing Form"
         CType(dgv_sailingform, ComponentModel.ISupportInitialize).EndInit()
         gbox_sailingform.ResumeLayout(False)
         gbox_sailingform.PerformLayout()

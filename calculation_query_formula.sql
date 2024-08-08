@@ -31,7 +31,7 @@ SELECT vessel,captain,DATE_FORMAT(FROM_UNIXTIME(ship_data.estimate_time_arrival)
 FROM ship_data WHERE deleted_at=0;
 
 -- DRAFT SQL for Calculation Form
-CREATE VIEW calculation_form AS
+CREATE OR REPLACE VIEW calculation_form AS
     SELECT
     DATE_FORMAT(FROM_UNIXTIME(ship_data.date), '%c/%e/%Y') AS day_date,
     ship_data.vessel,
@@ -43,7 +43,7 @@ CREATE VIEW calculation_form AS
     unloading_data.quantity AS package_import,
     loading_data.voyage_number AS export_voyage_number,
     loading_data.team_supervisor AS export_team_supervisor,
-    (unloading_data.finish_unloading_time - loading_data.start_loading_time)/60 AS start_load,
+    (loading_data.start_loading_time - unloading_data.finish_unloading_time)/60 AS start_load,
     (loading_data.finish_loading_time - loading_data.start_loading_time)/60 AS load_time,
     loading_data.quantity AS package_export,
     (loading_data.finish_loading_time - unloading_data.start_unloading_time)/3600 AS stevedoring_time,

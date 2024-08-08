@@ -23,4 +23,8 @@ Public Class CalculationForm
     Private Sub btn_viewreport_Click(sender As Object, e As EventArgs) Handles btn_viewreport.Click
         filteredCalculationForm(dtp_datefrom.Value, dtp_dateto.Value)
     End Sub
+
+    Private Sub CalculationForm_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
+        Menu.Show()
+    End Sub
 End Class

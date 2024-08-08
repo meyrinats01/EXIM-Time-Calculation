@@ -101,7 +101,7 @@ Partial Class CalculationForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1737, 741)
+        ClientSize = New Size(1370, 741)
         Controls.Add(btn_viewreport)
         Controls.Add(dgv_timecalculationreport)
         Controls.Add(dtp_dateto)

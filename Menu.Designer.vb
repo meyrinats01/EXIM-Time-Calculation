@@ -148,7 +148,7 @@ Partial Class Menu
         btn_login.Location = New Point(336, 361)
         btn_login.Name = "btn_login"
         btn_login.Size = New Size(178, 64)
-        btn_login.TabIndex = 14
+        btn_login.TabIndex = 2
         btn_login.Text = "LOGIN"
         btn_login.UseVisualStyleBackColor = True
         ' 
@@ -179,7 +179,7 @@ Partial Class Menu
         txtbox_password.Name = "txtbox_password"
         txtbox_password.PasswordChar = "*"c
         txtbox_password.Size = New Size(438, 61)
-        txtbox_password.TabIndex = 11
+        txtbox_password.TabIndex = 1
         ' 
         ' txtbox_username
         ' 
@@ -187,7 +187,7 @@ Partial Class Menu
         txtbox_username.Location = New Point(286, 48)
         txtbox_username.Name = "txtbox_username"
         txtbox_username.Size = New Size(438, 61)
-        txtbox_username.TabIndex = 10
+        txtbox_username.TabIndex = 0
         ' 
         ' Menu
         ' 

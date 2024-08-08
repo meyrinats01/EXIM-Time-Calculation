@@ -68,7 +68,7 @@ Partial Class CalculationForm
         dtp_datefrom.Location = New Point(44, 173)
         dtp_datefrom.Name = "dtp_datefrom"
         dtp_datefrom.Size = New Size(249, 29)
-        dtp_datefrom.TabIndex = 7
+        dtp_datefrom.TabIndex = 0
         ' 
         ' dtp_dateto
         ' 
@@ -76,7 +76,7 @@ Partial Class CalculationForm
         dtp_dateto.Location = New Point(371, 173)
         dtp_dateto.Name = "dtp_dateto"
         dtp_dateto.Size = New Size(249, 29)
-        dtp_dateto.TabIndex = 8
+        dtp_dateto.TabIndex = 1
         ' 
         ' dgv_timecalculationreport
         ' 
@@ -84,7 +84,7 @@ Partial Class CalculationForm
         dgv_timecalculationreport.Location = New Point(22, 223)
         dgv_timecalculationreport.Name = "dgv_timecalculationreport"
         dgv_timecalculationreport.Size = New Size(1703, 506)
-        dgv_timecalculationreport.TabIndex = 9
+        dgv_timecalculationreport.TabIndex = 3
         ' 
         ' btn_viewreport
         ' 
@@ -93,7 +93,7 @@ Partial Class CalculationForm
         btn_viewreport.Margin = New Padding(4)
         btn_viewreport.Name = "btn_viewreport"
         btn_viewreport.Size = New Size(128, 38)
-        btn_viewreport.TabIndex = 34
+        btn_viewreport.TabIndex = 2
         btn_viewreport.Text = "View Report"
         btn_viewreport.UseVisualStyleBackColor = True
         ' 

@@ -52,7 +52,7 @@ Partial Class ImportForm
         dgv_importform.Name = "dgv_importform"
         dgv_importform.ReadOnly = True
         dgv_importform.Size = New Size(1003, 510)
-        dgv_importform.TabIndex = 1
+        dgv_importform.TabIndex = 0
         ' 
         ' gbox_importform
         ' 
@@ -89,7 +89,7 @@ Partial Class ImportForm
         txtbox_packageimport.Margin = New Padding(4)
         txtbox_packageimport.Name = "txtbox_packageimport"
         txtbox_packageimport.Size = New Size(345, 29)
-        txtbox_packageimport.TabIndex = 34
+        txtbox_packageimport.TabIndex = 4
         ' 
         ' txtbox_spvteam
         ' 
@@ -98,7 +98,7 @@ Partial Class ImportForm
         txtbox_spvteam.Margin = New Padding(4)
         txtbox_spvteam.Name = "txtbox_spvteam"
         txtbox_spvteam.Size = New Size(345, 29)
-        txtbox_spvteam.TabIndex = 32
+        txtbox_spvteam.TabIndex = 5
         ' 
         ' dtp_daydate
         ' 
@@ -107,7 +107,7 @@ Partial Class ImportForm
         dtp_daydate.Margin = New Padding(4)
         dtp_daydate.Name = "dtp_daydate"
         dtp_daydate.Size = New Size(345, 29)
-        dtp_daydate.TabIndex = 31
+        dtp_daydate.TabIndex = 0
         ' 
         ' Label8
         ' 
@@ -127,7 +127,7 @@ Partial Class ImportForm
         txtbox_voyagenumber.Margin = New Padding(4)
         txtbox_voyagenumber.Name = "txtbox_voyagenumber"
         txtbox_voyagenumber.Size = New Size(345, 29)
-        txtbox_voyagenumber.TabIndex = 2
+        txtbox_voyagenumber.TabIndex = 1
         ' 
         ' dtp_finishunload
         ' 
@@ -137,7 +137,7 @@ Partial Class ImportForm
         dtp_finishunload.Margin = New Padding(4)
         dtp_finishunload.Name = "dtp_finishunload"
         dtp_finishunload.Size = New Size(345, 29)
-        dtp_finishunload.TabIndex = 28
+        dtp_finishunload.TabIndex = 3
         ' 
         ' dtp_startunload
         ' 
@@ -147,7 +147,7 @@ Partial Class ImportForm
         dtp_startunload.Margin = New Padding(4)
         dtp_startunload.Name = "dtp_startunload"
         dtp_startunload.Size = New Size(345, 29)
-        dtp_startunload.TabIndex = 27
+        dtp_startunload.TabIndex = 2
         ' 
         ' Label1
         ' 
@@ -198,7 +198,7 @@ Partial Class ImportForm
         btn_delete.Margin = New Padding(4)
         btn_delete.Name = "btn_delete"
         btn_delete.Size = New Size(129, 67)
-        btn_delete.TabIndex = 17
+        btn_delete.TabIndex = 7
         btn_delete.Text = "DELETE"
         btn_delete.UseVisualStyleBackColor = True
         ' 
@@ -231,7 +231,7 @@ Partial Class ImportForm
         btn_save.Margin = New Padding(4)
         btn_save.Name = "btn_save"
         btn_save.Size = New Size(129, 67)
-        btn_save.TabIndex = 15
+        btn_save.TabIndex = 6
         btn_save.Text = "SAVE"
         btn_save.UseVisualStyleBackColor = True
         ' 
@@ -257,7 +257,7 @@ Partial Class ImportForm
         Margin = New Padding(4)
         MaximizeBox = False
         Name = "ImportForm"
-        Text = "ImportForm"
+        Text = "Import Form"
         CType(dgv_importform, ComponentModel.ISupportInitialize).EndInit()
         gbox_importform.ResumeLayout(False)
         gbox_importform.PerformLayout()

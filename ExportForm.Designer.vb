@@ -79,7 +79,7 @@ Partial Class ExportForm
         txtbox_packageexport.Margin = New Padding(4)
         txtbox_packageexport.Name = "txtbox_packageexport"
         txtbox_packageexport.Size = New Size(345, 29)
-        txtbox_packageexport.TabIndex = 33
+        txtbox_packageexport.TabIndex = 4
         ' 
         ' txtbox_spvteam
         ' 
@@ -88,7 +88,7 @@ Partial Class ExportForm
         txtbox_spvteam.Margin = New Padding(4)
         txtbox_spvteam.Name = "txtbox_spvteam"
         txtbox_spvteam.Size = New Size(345, 29)
-        txtbox_spvteam.TabIndex = 32
+        txtbox_spvteam.TabIndex = 5
         ' 
         ' dtp_daydate
         ' 
@@ -97,7 +97,7 @@ Partial Class ExportForm
         dtp_daydate.Margin = New Padding(4)
         dtp_daydate.Name = "dtp_daydate"
         dtp_daydate.Size = New Size(345, 29)
-        dtp_daydate.TabIndex = 31
+        dtp_daydate.TabIndex = 0
         ' 
         ' Label8
         ' 
@@ -117,7 +117,7 @@ Partial Class ExportForm
         txtbox_voyagenumber.Margin = New Padding(4)
         txtbox_voyagenumber.Name = "txtbox_voyagenumber"
         txtbox_voyagenumber.Size = New Size(345, 29)
-        txtbox_voyagenumber.TabIndex = 2
+        txtbox_voyagenumber.TabIndex = 1
         ' 
         ' dtp_finishload
         ' 
@@ -127,7 +127,7 @@ Partial Class ExportForm
         dtp_finishload.Margin = New Padding(4)
         dtp_finishload.Name = "dtp_finishload"
         dtp_finishload.Size = New Size(345, 29)
-        dtp_finishload.TabIndex = 28
+        dtp_finishload.TabIndex = 3
         ' 
         ' dtp_startload
         ' 
@@ -137,7 +137,7 @@ Partial Class ExportForm
         dtp_startload.Margin = New Padding(4)
         dtp_startload.Name = "dtp_startload"
         dtp_startload.Size = New Size(345, 29)
-        dtp_startload.TabIndex = 27
+        dtp_startload.TabIndex = 2
         ' 
         ' Label1
         ' 
@@ -188,7 +188,7 @@ Partial Class ExportForm
         btn_delete.Margin = New Padding(4)
         btn_delete.Name = "btn_delete"
         btn_delete.Size = New Size(129, 67)
-        btn_delete.TabIndex = 17
+        btn_delete.TabIndex = 7
         btn_delete.Text = "DELETE"
         btn_delete.UseVisualStyleBackColor = True
         ' 
@@ -221,7 +221,7 @@ Partial Class ExportForm
         btn_save.Margin = New Padding(4)
         btn_save.Name = "btn_save"
         btn_save.Size = New Size(129, 67)
-        btn_save.TabIndex = 15
+        btn_save.TabIndex = 6
         btn_save.Text = "SAVE"
         btn_save.UseVisualStyleBackColor = True
         ' 
@@ -244,7 +244,7 @@ Partial Class ExportForm
         dgv_exportform.Name = "dgv_exportform"
         dgv_exportform.ReadOnly = True
         dgv_exportform.Size = New Size(1003, 510)
-        dgv_exportform.TabIndex = 32
+        dgv_exportform.TabIndex = 0
         ' 
         ' ExportForm
         ' 

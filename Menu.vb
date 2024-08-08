@@ -21,7 +21,7 @@ Public Class Menu
                 MenuStrip2.Enabled = True
                 gbox_login.Visible = False
             Else
-                Dim msgBoxResult = MsgBox("Username or password is incorrect")
+                MsgBox("Username or password is incorrect")
             End If
         End While
     End Sub
@@ -41,5 +41,10 @@ Public Class Menu
         txtbox_username.Text = ""
         txtbox_password.Text = ""
         MenuStrip2.Enabled = False
+    End Sub
+
+    Private Sub CalculationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CalculationToolStripMenuItem.Click
+        Me.Hide()
+        CalculationForm.Show()
     End Sub
 End Class

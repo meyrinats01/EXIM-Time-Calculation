@@ -63,7 +63,7 @@ Partial Class SailingForm
         txtbox_vesselname.Margin = New Padding(4)
         txtbox_vesselname.Name = "txtbox_vesselname"
         txtbox_vesselname.Size = New Size(345, 29)
-        txtbox_vesselname.TabIndex = 2
+        txtbox_vesselname.TabIndex = 1
         ' 
         ' txtbox_captain
         ' 
@@ -72,7 +72,7 @@ Partial Class SailingForm
         txtbox_captain.Margin = New Padding(4)
         txtbox_captain.Name = "txtbox_captain"
         txtbox_captain.Size = New Size(345, 29)
-        txtbox_captain.TabIndex = 7
+        txtbox_captain.TabIndex = 2
         ' 
         ' Label1
         ' 
@@ -158,7 +158,7 @@ Partial Class SailingForm
         btn_save.Margin = New Padding(4)
         btn_save.Name = "btn_save"
         btn_save.Size = New Size(129, 67)
-        btn_save.TabIndex = 15
+        btn_save.TabIndex = 7
         btn_save.Text = "SAVE"
         btn_save.UseVisualStyleBackColor = True
         ' 
@@ -169,7 +169,7 @@ Partial Class SailingForm
         btn_delete.Margin = New Padding(4)
         btn_delete.Name = "btn_delete"
         btn_delete.Size = New Size(129, 67)
-        btn_delete.TabIndex = 17
+        btn_delete.TabIndex = 8
         btn_delete.Text = "DELETE"
         btn_delete.UseVisualStyleBackColor = True
         ' 
@@ -190,7 +190,7 @@ Partial Class SailingForm
         dtp_etd.Margin = New Padding(4)
         dtp_etd.Name = "dtp_etd"
         dtp_etd.Size = New Size(345, 29)
-        dtp_etd.TabIndex = 26
+        dtp_etd.TabIndex = 5
         ' 
         ' dtp_eta
         ' 
@@ -200,7 +200,7 @@ Partial Class SailingForm
         dtp_eta.Margin = New Padding(4)
         dtp_eta.Name = "dtp_eta"
         dtp_eta.Size = New Size(345, 29)
-        dtp_eta.TabIndex = 27
+        dtp_eta.TabIndex = 3
         ' 
         ' dtp_ata
         ' 
@@ -210,7 +210,7 @@ Partial Class SailingForm
         dtp_ata.Margin = New Padding(4)
         dtp_ata.Name = "dtp_ata"
         dtp_ata.Size = New Size(345, 29)
-        dtp_ata.TabIndex = 28
+        dtp_ata.TabIndex = 4
         ' 
         ' dtp_atd
         ' 
@@ -220,7 +220,7 @@ Partial Class SailingForm
         dtp_atd.Margin = New Padding(4)
         dtp_atd.Name = "dtp_atd"
         dtp_atd.Size = New Size(345, 29)
-        dtp_atd.TabIndex = 29
+        dtp_atd.TabIndex = 6
         ' 
         ' gbox_sailingform
         ' 
@@ -260,7 +260,7 @@ Partial Class SailingForm
         dtp_daydate.Margin = New Padding(4)
         dtp_daydate.Name = "dtp_daydate"
         dtp_daydate.Size = New Size(345, 29)
-        dtp_daydate.TabIndex = 31
+        dtp_daydate.TabIndex = 0
         ' 
         ' Label8
         ' 

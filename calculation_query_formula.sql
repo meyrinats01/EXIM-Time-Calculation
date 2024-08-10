@@ -34,6 +34,9 @@ FROM ship_data WHERE deleted_at=0;
 CREATE OR REPLACE VIEW calculation_form AS
     SELECT
     DATE_FORMAT(FROM_UNIXTIME(ship_data.date), '%c/%e/%Y') AS day_date,
+    ship_data.id AS ship_data_id,
+    loading_data.id AS loading_data_id,
+    unloading_data.id AS unloading_data_id,
     ship_data.vessel,
     ship_data.captain,
     unloading_data.voyage_number AS import_voyage_number,
